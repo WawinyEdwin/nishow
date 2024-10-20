@@ -3,7 +3,8 @@ import Hero from "@/components/Hero";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Genfluence",
+  title: "Lonch",
+  description: 'A launch platform for kenyan builders to showcase their innovation'
 };
 
 export default function Home() {
