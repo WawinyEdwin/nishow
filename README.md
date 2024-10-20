@@ -1,4 +1,6 @@
-# Go get started
+# Lonch - A platform for kenyan builders to showcase their work
+
+## Go get started
 
 1. Install dependencies
 

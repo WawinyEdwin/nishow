@@ -43,7 +43,7 @@ const Header = () => {
           <div className="-mx-4 flex items-center justify-between">
             <div className="w-60 max-w-full px-4 xl:mr-12">
               <Link href="/" className={`header-logo block w-full `}>
-                Genfluece AI
+                Lonch
               </Link>
             </div>
             <div className="flex w-full items-center justify-end px-4">
