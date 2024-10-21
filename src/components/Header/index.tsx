@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import menuData from "./menuData";
+import User from "../User";
 
 const Header = () => {
   // Navbar toggle
@@ -129,7 +130,7 @@ const Header = () => {
                         )}
                       </li>
                     ))}
-                    {/* <User /> */}
+                    <User />
                   </ul>
                 </nav>
               </div>
