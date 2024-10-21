@@ -2,8 +2,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import menuData from "./menuData";
 import User from "../User";
+import menuData from "./menuData";
 
 const Header = () => {
   // Navbar toggle
@@ -44,7 +44,7 @@ const Header = () => {
           <div className="-mx-4 flex items-center justify-between">
             <div className="w-60 max-w-full px-4 xl:mr-12">
               <Link href="/" className={`header-logo block w-full `}>
-                Lonch
+                Nishow
               </Link>
             </div>
             <div className="flex w-full items-center justify-end px-4">

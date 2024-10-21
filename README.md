@@ -1,4 +1,4 @@
-# Lonch - A platform for kenyan builders to showcase their work
+# Nishow - A platform for kenyan builders to showcase their work
 
 ## Go get started
 
@@ -14,4 +14,4 @@
     npm run dev
 ```
 
-3. Open the site on  `http://localhost:3000`
+3. Open the site on `http://localhost:3000`

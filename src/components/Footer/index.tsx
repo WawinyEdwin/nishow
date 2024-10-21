@@ -14,12 +14,12 @@ const Footer = async () => {
             <div className="w-full px-4 sm:w-1/2 lg:w-1/3">
               <div className="mb-12 max-w-[360px] lg:mb-16">
                 <h2 className="mb-10 text-xl font-bold text-black dark:text-white ">
-                  Lonch
+                  Nishow
                 </h2>
                 <p className="mb-9 text-base leading-relaxed text-body-color dark:text-body-color-dark">
                   A platform that give your product visibility to the larger
                   community and helps you showcase what you have been building.
-                  For more information emails us [hello@lonch.com]
+                  For more information emails us [hello@Nishow.com]
                 </p>
               </div>
             </div>
@@ -90,7 +90,7 @@ const Footer = async () => {
           <Divider />
           <div className="py-8">
             <p className="text-center text-base text-body-color dark:text-white">
-              Copyright &copy; Lonch 2024 | All rights reserved
+              Copyright &copy; Nishow 2024 | All rights reserved
             </p>
           </div>
         </div>
