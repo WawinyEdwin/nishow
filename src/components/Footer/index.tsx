@@ -1,8 +1,11 @@
 "use client";
+import { getCategories } from "@/lib/db";
+import { Category } from "@/types/category";
 import Link from "next/link";
 import Divider from "../Common/Divider";
 
-const Footer = () => {
+const Footer = async () => {
+  const categories: Category[] = await getCategories();
   return (
     <>
       <footer className="relative z-10 pt-16 md:pt-20 lg:pt-24">
@@ -27,46 +30,16 @@ const Footer = () => {
                   Categories
                 </h2>
                 <ul>
-                  <li>
-                    <Link
-                      href="/"
-                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
-                    >
-                      Development
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/"
-                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
-                    >
-                      Design
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/"
-                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
-                    >
-                      Marketing
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/"
-                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
-                    >
-                      Business
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/"
-                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
-                    >
-                      Life
-                    </Link>
-                  </li>
+                  {categories.map((cat) => (
+                    <li key={cat.id}>
+                      <Link
+                        href={`/category/${cat.name}`}
+                        className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                      >
+                        {cat.name}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>

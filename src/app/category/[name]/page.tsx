@@ -1,20 +1,23 @@
 "use client";
-import { getProducts } from "@/lib/db";
+import Divider from "@/components/Common/Divider";
+import { getProductsByCategory } from "@/lib/db";
 import { Product } from "@/types/product";
 import Image from "next/image";
 import Link from "next/link";
-import Divider from "../Common/Divider";
 
-const Features = async () => {
-  const productData: Product[] = await getProducts();
+export default async function Page({ params }: { params: { name: string } }) {
+  const productData: Product[] = await getProductsByCategory(params.name);
   return (
-    <>
+    <div className="container">
+      <h1> Products in category : {params.name}</h1>
+      <br />
       <section id="features">
         <div className="container">
           <Divider />
           <div className="mt-4 grid items-center justify-center">
             {productData && productData.length > 1 ? (
               <>
+                {" "}
                 {productData.map((product) => (
                   <Link href={product.link} key={product.id}>
                     <div className="flex items-start space-x-4 pb-4">
@@ -34,19 +37,14 @@ const Features = async () => {
                       </div>
                     </div>
                   </Link>
-                ))}
+                ))}{" "}
               </>
             ) : (
-              <>
-                Oops! No products to be showcased as per this time, try adding
-                your product
-              </>
+              <>No products published for this category</>
             )}
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
-};
-
-export default Features;
+}
