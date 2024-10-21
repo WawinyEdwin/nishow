@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
 import "node_modules/react-modal-video/css/modal-video.css";
 import "../styles/index.css";
+import GoogleAnalytics from "./google-analytics";
 
 export default function RootLayout({
   children,
@@ -18,7 +19,7 @@ export default function RootLayout({
         head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-
+      <GoogleAnalytics />
       <body>
         <Providers>
           <Header />
