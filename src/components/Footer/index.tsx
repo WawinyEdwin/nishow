@@ -79,7 +79,7 @@ const Footer = () => {
                 <ul>
                   <li>
                     <Link
-                      href="/contact"
+                      href="/howitworks"
                       className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
                       How it works
@@ -87,7 +87,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/"
+                      href="/advertisewithus"
                       className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
                       Advertise with us
@@ -95,7 +95,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/about"
+                      href="/addproduct"
                       className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
                       Add your product
@@ -103,7 +103,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/about"
+                      href="/faqs"
                       className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
                       Faqs

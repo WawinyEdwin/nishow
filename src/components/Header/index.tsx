@@ -129,11 +129,7 @@ const Header = () => {
                         )}
                       </li>
                     ))}
-                    <li className="group relative mt-4">
-                      <p className=" flex cursor-pointer  items-center justify-between rounded-full bg-primary px-8 py-4 text-base text-white ">
-                        Login
-                      </p>
-                    </li>
+                    {/* <User /> */}
                   </ul>
                 </nav>
               </div>
