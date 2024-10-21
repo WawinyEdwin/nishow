@@ -6,6 +6,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "node_modules/react-modal-video/css/modal-video.css";
 import "../styles/index.css";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function RootLayout({
   children,
@@ -20,6 +21,7 @@ export default function RootLayout({
       */}
       <GoogleAnalytics gaId="G-9PMXVY26RC" />
       <head />
+      <Analytics />
       <body>
         <Providers>
           <Header />
