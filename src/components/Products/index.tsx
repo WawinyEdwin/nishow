@@ -4,16 +4,33 @@ import { Product } from "@/types/product";
 import Image from "next/image";
 import Link from "next/link";
 import Divider from "../Common/Divider";
+import { useEffect, useState } from "react";
+import { useSnackbar } from "notistack";
 
 const Features = async () => {
-  const productData: Product[] = await getProducts();
+  const { enqueueSnackbar } = useSnackbar();
+  const [productData, setProductData] = useState<Product[] | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const products: Product[] = await getProducts();
+        setProductData(products);
+      } catch (err) {
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
   return (
     <>
       <section id="features">
         <div className="container">
           <Divider />
           <div className="mt-4 grid items-center justify-center">
-            {productData && productData.length > 1 ? (
+            {productData ? (
               <>
                 {productData.map((product) => (
                   <Link href={product.link} key={product.id}>

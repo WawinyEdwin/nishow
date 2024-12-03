@@ -1,4 +1,5 @@
 import { SessionProvider } from "next-auth/react";
+import { SnackbarProvider } from "notistack";
 
 export default function App({
   Component,
@@ -6,7 +7,13 @@ export default function App({
 }) {
   return (
     <SessionProvider session={session}>
-      <Component {...pageProps} />
+      <SnackbarProvider
+        autoHideDuration={1000}
+        maxSnack={3}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+      > <Component {...pageProps} />
+      </SnackbarProvider>
+     
     </SessionProvider>
   );
 }

@@ -10,6 +10,9 @@ export default function AddProduct() {
   const [name, setName] = useState("");
   const [short_description, setShort] = useState("");
   const [long_description, setLong] = useState("");
+  const [link, setLink] = useState("")
+  const [logo_url, setLogoURL] = useState("")
+  const [cat, setCat] = useState("")
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -24,9 +27,13 @@ export default function AddProduct() {
     fetchCategories();
   }, []);
 
+  const handleSubmit = () => {
+
+  }
+
   return (
     <div className="flex items-start justify-center  md:items-center">
-      <form>
+      <form onSubmit={handleSubmit}>
         <h1 className="mb-8 text-4xl font-bold leading-tight text-black dark:text-white sm:text-3xl sm:leading-tight md:text-3xl md:leading-tight">
           List your product in the showcase directory
         </h1>
@@ -50,6 +57,8 @@ export default function AddProduct() {
           <input
             type="text"
             id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             className="shadow-xs block h-11 w-full  border border-gray-300 bg-transparent  px-5 py-2.5 text-base font-normal leading-7  focus:outline-none "
             placeholder=""
           ></input>
@@ -74,6 +83,8 @@ export default function AddProduct() {
           <input
             type="text"
             id="link"
+            value={logo_url}
+            onChange={(e) => setLogoURL(e.target.value)}
             className="shadow-xs block h-11 w-full border border-gray-300 bg-transparent px-5 py-2.5 text-base font-normal leading-7  focus:outline-none "
             placeholder=""
           ></input>
@@ -96,8 +107,10 @@ export default function AddProduct() {
             </svg>
           </label>
           <input
+            value={short_description}
             type="text"
             id="short_description"
+            onChange={(e) => setShort(e.target.value)}
             className="shadow-xs block h-11 w-full border border-gray-300 bg-transparent px-5 py-2.5 text-base font-normal leading-7  focus:outline-none "
             placeholder=""
           ></input>
@@ -122,6 +135,7 @@ export default function AddProduct() {
           <input
             type="text"
             id="link"
+            onChange={(e) => setLink(e.target.value)}
             className="shadow-xs block h-11 w-full border border-gray-300 bg-transparent px-5 py-2.5 text-base font-normal leading-7  focus:outline-none "
             placeholder=""
           ></input>
