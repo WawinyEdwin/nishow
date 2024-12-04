@@ -1,8 +1,7 @@
-import { Category } from "@/types/category";
-import { IProduct, Product } from "@/types/product";
+
 import supabase from "./supabase";
 
-export async function getCategories(): Promise<Category[]> {
+export async function getCategories() {
   const { data, error } = await supabase.from("categories").select("*");
 
   if (error) {
@@ -11,7 +10,7 @@ export async function getCategories(): Promise<Category[]> {
   return data;
 }
 
-export async function getProductsByCategory(name: string): Promise<Product[]> {
+export async function getProductsByCategory(name){
   const { data, error } = await supabase
     .from("products")
     .select(
@@ -25,7 +24,7 @@ export async function getProductsByCategory(name: string): Promise<Product[]> {
   return data;
 }
 
-export async function getProducts(): Promise<Product[]> {
+export async function getProducts() {
   const { data, error } = await supabase
     .from("products")
     .select(
@@ -38,7 +37,7 @@ export async function getProducts(): Promise<Product[]> {
   return data;
 }
 
-export async function createProduct(product: IProduct) {
+export async function createProduct(product) {
   const { data, error } = await supabase
     .from("products")
     .insert([product])

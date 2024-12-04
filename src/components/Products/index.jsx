@@ -1,23 +1,36 @@
 "use client";
-import Divider from "@/components/Common/Divider";
-import { getProductsByCategory } from "@/lib/db";
-import { Product } from "@/types/product";
+import { getProducts } from "../../lib/db";
 import Image from "next/image";
 import Link from "next/link";
+import Divider from "../Common/Divider";
+import { useEffect, useState } from "react";
+import { useSnackbar } from "notistack";
 
-export default async function Page({ params }: { params: { name: string } }) {
-  const productData: Product[] = await getProductsByCategory(params.name);
+const Features = async () => {
+  const { enqueueSnackbar } = useSnackbar();
+  const [productData, setProductData] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const products = await getProducts();
+        setProductData(products);
+      } catch (err) {
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
   return (
-    <div className="container">
-      <h1> Products in category : {params.name}</h1>
-      <br />
+    <>
       <section id="features">
         <div className="container">
           <Divider />
           <div className="mt-4 grid items-center justify-center">
-            {productData && productData.length > 1 ? (
+            {productData ? (
               <>
-                {" "}
                 {productData.map((product) => (
                   <Link href={product.link} key={product.id}>
                     <div className="flex items-start space-x-4 pb-4">
@@ -37,14 +50,19 @@ export default async function Page({ params }: { params: { name: string } }) {
                       </div>
                     </div>
                   </Link>
-                ))}{" "}
+                ))}
               </>
             ) : (
-              <>No products published for this category</>
+              <>
+                Oops! No products to be showcased as per this time, try adding
+                your product
+              </>
             )}
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
-}
+};
+
+export default Features;

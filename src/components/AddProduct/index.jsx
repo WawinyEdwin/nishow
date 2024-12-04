@@ -1,12 +1,11 @@
 "use client";
-import { getCategories } from "@/lib/db";
-import { Category } from "@/types/category";
+import { getCategories } from "../../lib/db";
 import { useEffect, useState } from "react";
 
 // const handleSubmit = async () => {};
 
 export default function AddProduct() {
-  const [categories, setCategories] = useState<Category[] | null>(null);
+  const [categories, setCategories] = useState(null);
   const [name, setName] = useState("");
   const [short_description, setShort] = useState("");
   const [long_description, setLong] = useState("");
