@@ -1,34 +1,34 @@
 "use client";
 import { getCategories } from "../../lib/db";
+import { useSnackbar } from "notistack";
 import { useEffect, useState } from "react";
-
-// const handleSubmit = async () => {};
+import { getError } from "src/lib/error";
 
 export default function AddProduct() {
-  const [categories, setCategories] = useState(null);
+  const { enqueueSnackbar } = useSnackbar();
+  const [categories, setCategories] = useState([]);
   const [name, setName] = useState("");
   const [short_description, setShort] = useState("");
   const [long_description, setLong] = useState("");
-  const [link, setLink] = useState("")
-  const [logo_url, setLogoURL] = useState("")
-  const [cat, setCat] = useState("")
+  const [link, setLink] = useState("");
+  const [logo_url, setLogoURL] = useState("");
+  const [cat, setCat] = useState("");
 
   useEffect(() => {
     const fetchCategories = async () => {
       try {
         const data = await getCategories();
         setCategories(data);
+        console.log(data);
       } catch (error) {
-        console.error("Error fetching Categories", error);
+        enqueueSnackbar(getError(error), { variant: "error" });
       }
     };
 
     fetchCategories();
   }, []);
 
-  const handleSubmit = () => {
-
-  }
+  const handleSubmit = () => {};
 
   return (
     <div className="flex items-start justify-center  md:items-center">
@@ -180,6 +180,7 @@ export default function AddProduct() {
             Long description about your product
           </label>
           <textarea
+            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
             name="long_description"
             id="long_description"
             cols={70}
