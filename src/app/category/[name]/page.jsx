@@ -1,6 +1,6 @@
 "use client";
-import Divider from "../../components/Common/Divider";
-import { getProductsByCategory } from "../..//lib/db";
+import Divider from "../../../components/Common/Divider";
+import { getProductsByCategory } from "../../../lib/db";
 import Image from "next/image";
 import Link from "next/link";
 
