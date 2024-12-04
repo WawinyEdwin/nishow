@@ -1,11 +1,10 @@
 "use client";
-import { getCategories } from "@/lib/db";
-import { Category } from "@/types/category";
+import { getCategories } from "../../lib/db";
 import Link from "next/link";
 import Divider from "../Common/Divider";
 
 const Footer = async () => {
-  const categories: Category[] = await getCategories();
+  const categories =  await getCategories();
   return (
     <>
       <footer className="relative z-10 pt-16 md:pt-20 lg:pt-24">

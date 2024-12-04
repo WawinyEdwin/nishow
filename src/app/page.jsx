@@ -1,8 +1,8 @@
-import Hero from "@/components/Hero";
-import Features from "@/components/Products";
+import Hero from "../components/Hero";
+import Features from "../components/Products";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Nishow",
   description:
     "A launch platform for kenyan builders to showcase their innovation",

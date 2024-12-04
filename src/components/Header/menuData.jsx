@@ -1,6 +1,6 @@
-import { Menu } from "@/types/menu";
 
-const menuData: Menu[] = [
+
+const menuData = [
   {
     id: 1,
     title: "Discover",
