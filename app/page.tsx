@@ -1,0 +1,17 @@
+import Hero from "../components/Hero";
+import Features from "../components/Products";
+
+export const metadata = {
+  title: "Nishow",
+  description:
+    "A launch platform for kenyan builders to showcase their innovation",
+};
+
+export default function Home() {
+  return (
+    <>
+      <Hero />
+      <Features />
+    </>
+  );
+}
